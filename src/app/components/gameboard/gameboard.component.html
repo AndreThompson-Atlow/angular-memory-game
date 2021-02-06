@@ -1,0 +1,30 @@
+<div class="interface">
+  <app-interface
+    [score]="score"
+    [wins]="wins"
+    [difficulty]="difficulty"
+    (playAgain)="reset(false)"
+  ></app-interface>
+</div>
+<app-settings
+  [difficulty]="difficulty"
+  [theme]="theme"
+  [delay]="delay"
+  (settingsChange)="toggleSettings($event)"
+></app-settings>
+<div *ngIf="gameActive" class="game-board">
+  <app-tile
+    (clickedTile)="handleClick($event)"
+    *ngFor="let tile of tiles"
+    [tileData]="tile"
+    [clicked]="clicked"
+    [flippedKeys]="flippedKeys"
+  ></app-tile>
+</div>
+
+<div *ngIf="!gameActive" class="game-board">
+  <div class="victoryBox">
+    <p>You Win!</p>
+    <button (click)="reset(true)">Play Again?</button>
+  </div>
+</div>

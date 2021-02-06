@@ -1,0 +1,6 @@
+<div class="center">
+  <p>Score: {{ score }}</p>
+  <p>Wins: {{ wins }}</p>
+  <p>Difficulty: {{ difficulty | titlecase }}</p>
+  <button (click)="playAgain.emit()">Reset</button>
+</div>

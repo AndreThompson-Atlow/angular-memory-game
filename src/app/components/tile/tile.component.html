@@ -1,0 +1,4 @@
+<div (click)="flipCard()" [ngClass]="flipped ? 'tile coral' : 'tile pink'">
+  <i *ngIf="!flipped" class="fad fa-adjust"></i>
+  <i *ngIf="flipped" [ngClass]="icon"></i>
+</div>

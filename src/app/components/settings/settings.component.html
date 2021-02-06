@@ -1,0 +1,31 @@
+<div *ngIf="!open" class="settings">
+  <i style="cursor: pointer" (click)="toggleSettings()" class="fas fa-cog"></i>
+</div>
+<div *ngIf="open" class="settings settings-open">
+  <i
+    style="cursor: pointer"
+    (click)="toggleSettings()"
+    class="fas fa-times-circle"
+  ></i>
+  <div class="settings-inner">
+    <div class="flex">
+      <p>Difficulty:</p>
+      <button (click)="toggle('Difficulty')">
+        {{ difficulty === "easy" ? "Hard" : "Easy" }}
+      </button>
+    </div>
+    <div class="flex">
+      <p>Theme:</p>
+      <button (click)="toggle('Theme')">
+        {{ theme === "light" ? "Dark" : "Light" }}
+      </button>
+    </div>
+    <div class="flex">
+      <p>Delay:</p>
+      <button (click)="toggle('Delay')">
+        {{ delay === "short" ? "Long" : "Short" }}
+      </button>
+    </div>
+    <div></div>
+  </div>
+</div>
